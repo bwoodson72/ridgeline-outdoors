@@ -6,11 +6,13 @@
  *   --color-brand  →  bg-brand, text-brand, border-brand, ring-brand …
  *   --spacing-section  →  py-section, mt-section …
  *
- * Font families are loaded from Google Fonts at the top of this file.
- * Swap the import URL and --font-display / --font-body values to change typefaces.
+ * Fonts are self-hosted via Fontsource (no external network request).
+ * Swap these imports and --font-display / --font-body values to change typefaces.
  */
 
-@import url("https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap");
+@import "@fontsource-variable/sora";
+@import "@fontsource-variable/dm-sans";
+@import "@fontsource-variable/dm-sans/wght-italic.css";
 
 @import "tailwindcss";
 
@@ -49,8 +51,8 @@
   --color-border: #e2e8f0;
 
   /* ── Typography ─────────────────────────────────────── */
-  --font-display: "Sora", sans-serif; /* headings */
-  --font-body: "DM Sans", sans-serif; /* body copy */
+  --font-display: "Sora Variable", sans-serif; /* headings */
+  --font-body: "DM Sans Variable", sans-serif; /* body copy */
 
   /* Type scale */
   --text-xs: 0.75rem;
@@ -98,7 +100,7 @@
   }
 
   body {
-    font-family: var(--font-body);
+    font-family: var(--font-body), sans-serif;
     color: var(--color-text-primary);
   }
 
@@ -106,6 +108,6 @@
   h2,
   h3,
   h4 {
-    font-family: var(--font-display);
+    font-family: var(--font-display), sans-serif;
   }
 }
