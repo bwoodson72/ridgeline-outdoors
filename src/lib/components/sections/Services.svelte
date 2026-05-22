@@ -4,6 +4,17 @@
 	import SectionHeading from '$lib/components/ui/SectionHeading.svelte';
 
 	const { eyebrow, heading, subheading } = siteContent.servicesSection;
+
+	const serviceImages = import.meta.glob(
+		'/src/lib/assets/services/*.avif',
+		{ eager: true, query: '?enhanced', import: 'default' }
+	) as Record<string, string>;
+
+	function getEnhancedImage(imageSrc: string | undefined): string | null {
+		if (!imageSrc) return null;
+		const filename = imageSrc.split('/').pop();
+		return serviceImages[`/src/lib/assets/services/${filename}`] ?? null;
+	}
 </script>
 
 <section id="services" class="bg-surface py-section">
@@ -15,11 +26,12 @@
 				<article class="group relative h-72 overflow-hidden rounded-xl">
 
 					<!-- Image or branded gradient fallback -->
-					{#if service.imageSrc}
-						<img
-							src={service.imageSrc}
+					{#if getEnhancedImage(service.imageSrc)}
+						<enhanced:img
+							src={getEnhancedImage(service.imageSrc)}
 							alt={service.title}
 							class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+							sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
 							loading="lazy"
 						/>
 					{:else}
