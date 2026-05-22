@@ -28,13 +28,13 @@
 
 <div class="flex flex-col rounded-xl border border-border bg-surface p-8 shadow-card">
 	<!-- Stars -->
-	<div class="mb-4 flex text-lg text-accent" aria-label="5 out of 5 stars">
+	<div class="mb-4 flex text-lg text-accent" role="img" aria-label="5 out of 5 stars">
 		<span aria-hidden="true">★★★★★</span>
 	</div>
 
 	<!-- Decorative quote mark + quote text -->
 	<div class="mb-6 flex-1">
-		<p class="font-display text-4xl leading-none text-brand" aria-hidden="true">"</p>
+	
 		<p class="mt-2 text-base italic leading-normal text-text-primary">{quote}</p>
 	</div>
 
@@ -45,6 +45,9 @@
 				src={avatarSrc}
 				alt={name}
 				class="h-12 w-12 shrink-0 rounded-full object-cover"
+				loading="lazy"
+				width="48"
+				height="48"
 			/>
 		{:else}
 			<div
@@ -57,7 +60,7 @@
 
 		<div>
 			<p class="text-sm font-semibold text-text-primary">{name}</p>
-			<p class="text-sm text-text-muted">{title} · {company}</p>
+			<p class="text-sm text-text-secondary">{title} · {company}</p>
 		</div>
 	</div>
 </div>

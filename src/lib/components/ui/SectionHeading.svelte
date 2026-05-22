@@ -15,22 +15,23 @@
 		subheading?: string;
 		align?: 'left' | 'center';
 		class?: ClassValue;
+		variant?: 'light' | 'dark';
 	}
 
-	let { eyebrow, heading, subheading, align = 'center', class: className }: Props = $props();
+	let { eyebrow, heading, subheading, align = 'center', class: className, variant = 'light' }: Props = $props();
 </script>
 
 <div class={[align === 'center' ? 'text-center' : 'text-left', className]}>
 	{#if eyebrow}
-		<p class="mb-3 text-sm font-semibold uppercase tracking-wider text-brand">
+		<p class={['mb-3 text-sm font-semibold uppercase tracking-wider', variant === 'dark' ? 'text-white' : 'text-brand']}>
 			{eyebrow}
 		</p>
 	{/if}
-	<h2 class="mb-4 font-display text-3xl font-bold leading-tight text-text-primary md:text-4xl">
+	<h2 class={['mb-4 font-display text-3xl font-bold leading-tight md:text-4xl', variant === 'dark' ? 'text-text-tertiary' : 'text-text-primary']}>
 		{heading}
 	</h2>
 	{#if subheading}
-		<p class={['text-lg text-text-secondary', align === 'center' && 'mx-auto max-w-2xl']}>
+		<p class={['text-lg', variant === 'dark' ? 'text-text-tertiary/80' : 'text-text-secondary', align === 'center' && 'mx-auto max-w-2xl']}>
 			{subheading}
 		</p>
 	{/if}

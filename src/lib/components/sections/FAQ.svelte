@@ -18,7 +18,7 @@
 			<!-- Left: heading + supporting text -->
 			<div>
 				<SectionHeading {eyebrow} {heading} {subheading} align="left" />
-				<p class="mt-6 text-sm leading-normal text-text-muted">
+				<p class="mt-6 text-sm leading-normal text-text-secondary">
 					Still have a question not covered here? Reach out directly at
 					<a
 						href="mailto:{siteContent.contact.email}"

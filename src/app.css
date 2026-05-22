@@ -16,12 +16,12 @@
 
 @theme {
   /* ── Brand ─────────────────────────────────────────── */
-  --color-brand: #2563eb;       /* primary action colour   */
-  --color-brand-dark: #1d4ed8;  /* hover / pressed state   */
-  --color-brand-light: #eff6ff; /* tinted backgrounds      */
+  --color-brand: #2D6A4F;       /* primary action colour   */
+  --color-brand-dark: #1B5438;  /* hover / pressed state   */
+  --color-brand-light: #EBF5EF; /* tinted backgrounds      */
 
   /* ── Accent ─────────────────────────────────────────── */
-  --color-accent: #f59e0b; /* stars, highlights */
+  --color-accent: #D4A017; /* stars, highlights */
 
   /* ── Neutral scale ──────────────────────────────────── */
   --color-neutral-50: #f8fafc;
@@ -37,11 +37,12 @@
 
   /* ── Surface ────────────────────────────────────────── */
   --color-surface: #ffffff;     /* default section background  */
-  --color-surface-alt: #f8fafc; /* alternating section background */
+  --color-surface-alt: #2D6A4F; /* alternating section background */
 
   /* ── Semantic text ──────────────────────────────────── */
   --color-text-primary: #0f172a;
   --color-text-secondary: #475569;
+  --color-text-tertiary: #f8fafc;
   --color-text-muted: #94a3b8;
 
   /* ── Border ─────────────────────────────────────────── */

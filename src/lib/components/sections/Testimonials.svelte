@@ -13,7 +13,7 @@
 
 <section id="testimonials" class="bg-surface-alt py-section">
 	<Container>
-		<SectionHeading {eyebrow} {heading} {subheading} class="mb-12" />
+		<SectionHeading {eyebrow} {heading} {subheading} variant="dark" class="mb-12" />
 
 		<div class="grid grid-cols-1 gap-6 lg:grid-cols-3">
 			{#each siteContent.testimonials as testimonial (testimonial.name)}

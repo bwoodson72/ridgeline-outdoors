@@ -61,6 +61,8 @@ export interface ServiceCard {
 	description: string;
 	/** Displayed as a price badge (e.g. 'From $350'). Omit to hide the badge entirely. */
 	price?: string;
+	/** Path to the card image relative to /static (e.g. '/images/services/lawn-care.avif'). Omit to show a branded gradient placeholder. */
+	imageSrc?: string;
 }
 
 /** A single step in the horizontal Process timeline. */
@@ -165,19 +167,19 @@ export interface SiteContent {
 }
 
 export const siteContent: SiteContent = {
-	companyName: 'Summit Roofing Co.',
-	tagline: 'Built to Last. Backed by Us.',
+	companyName: 'Ridgeline Outdoor Co.',
+	tagline: 'Rooted in Quality. Grown for You.',
 	footerTagline:
-		'Serving the Denver metro since 2009. Licensed, insured, and committed to doing the job right the first time.',
+		'Serving the Denver metro since 2011. Licensed, insured, and passionate about turning ordinary yards into extraordinary outdoor spaces.',
 
 	meta: {
-		title: 'Summit Roofing Co. | Denver Roofing & Repair',
+		title: 'Ridgeline Outdoor Co. | Denver Landscaping & Design',
 		description:
-			'Expert residential and commercial roofing in the Denver metro. Free estimates, 10-year workmanship warranty, fully licensed and insured. Call (720) 555-0184.',
-		ogTitle: 'Summit Roofing Co. — Built to Last. Backed by Us.',
+			'Expert landscaping, hardscaping, and lawn care in the Denver metro. Free consultations, 2-year installation warranty, fully licensed and insured. Call (720) 555-0184.',
+		ogTitle: 'Ridgeline Outdoor Co. — Rooted in Quality. Grown for You.',
 		ogDescription:
-			"Denver's most trusted roofing contractor. Roof replacement, repair, storm damage inspections, and gutters. Transparent pricing, no surprises.",
-		canonicalUrl: 'https://www.summitroofingco.com'
+			"Denver's most trusted landscaping company. Lawn care, landscape design, patios, irrigation, and seasonal cleanup. Transparent pricing, no surprises.",
+		canonicalUrl: 'https://www.ridgelineoutdoor.com'
 	},
 
 	nav: [
@@ -189,123 +191,141 @@ export const siteContent: SiteContent = {
 	],
 
 	hero: {
-		eyebrow: "Denver's #1 Rated Roofing Company",
-		headline: "The Last Roof You'll Ever Have to Worry About",
+		eyebrow: "Denver's #1 Rated Landscaping Company",
+		headline: 'The Outdoor Space You\'ve Always Imagined',
 		subheadline:
-			'Summit Roofing Co. delivers expert residential and commercial roofing across the Denver metro — backed by a 10-year workmanship warranty and a crew that shows up when they say they will.',
-		primaryCTA: 'Get a Free Estimate',
+			'Ridgeline Outdoor Co. designs, builds, and maintains stunning landscapes across the Denver metro — backed by a 2-year installation warranty and a crew that shows up when they say they will.',
+		primaryCTA: 'Get a Free Consultation',
 		primaryCTAHref: '#contact',
-		secondaryCTA: 'See Our Work',
+		secondaryCTA: 'See Our Services',
 		secondaryCTAHref: '#services',
-		imageSrc: '/images/hero-roof.jpg',
-		imageAlt: 'Summit Roofing crew installing shingles on a suburban home in Denver',
-		trustSignals: ['Licensed & Insured', 'Free Estimates', '5-Star Rated']
+		imageSrc: '/images/hero-landscape.avif',
+		imageAlt: 'Ridgeline crew installing a stone patio and garden beds at a Denver home',
+		trustSignals: ['Licensed & Insured', 'Free Consultations', '5-Star Rated']
 	},
 
 	problem: {
-		heading: 'Most Roofing Companies Leave You Guessing',
+		heading: 'Most Landscapers Leave Your Yard Half-Finished',
 		subheading:
-			"A leaking roof is stressful enough without chasing down contractors who ghost you mid-job. Here's what homeowners tell us they've dealt with before finding Summit:",
+			"A neglected yard is frustrating enough without chasing down contractors who vanish mid-project. Here's what homeowners tell us they experienced before finding Ridgeline:",
 		points: [
-			'Quotes that balloon 30–40% once work begins',
-			'Crews that disappear for days mid-project with no update',
-			'Repairs that fail before the next storm season',
-			'Zero documentation — no permits, no warranty paperwork'
+			'Estimates that double once the crew shows up',
+			'Projects dragging on for weeks with no communication',
+			'Plants that die within a season due to poor installation',
+			'No irrigation plan — just guesswork left to you'
 		]
 	},
 
 	features: [
 		{
 			icon: 'shield-check',
-			title: '10-Year Workmanship Warranty',
+			title: '2-Year Installation Warranty',
 			description:
-				'Every roof we install is covered for a full decade. If something goes wrong due to our work, we fix it — no arguments, no fine print.'
+				'Every landscape we install is covered for two full years. If plantings fail or hardscaping shifts due to our work, we make it right — no arguments, no fine print.'
 		},
 		{
 			icon: 'clock',
 			title: 'On-Time, Every Time',
 			description:
-				'We text you the morning of your appointment and show up in the agreed window. Your time matters as much as the job itself.'
+				'We text you the morning of your appointment and arrive in the agreed window. Your schedule matters as much as the job itself.'
 		},
 		{
 			icon: 'document-check',
 			title: 'Fully Licensed & Insured',
 			description:
-				'Summit holds a Colorado Class A contractor license and carries $2M general liability. We pull every required permit so your insurance claim stays clean.'
+				'Ridgeline holds a Colorado landscape contractor license and carries $2M general liability. Every project is done to code so your property stays protected.'
 		},
 		{
 			icon: 'currency-dollar',
 			title: 'Transparent, Itemized Quotes',
 			description:
-				"You'll receive a line-by-line estimate before any work begins. No surprise fees, no material markups hidden in labor rates."
+				"You'll receive a line-by-line estimate before any work begins — plants, materials, labor, and timeline all broken out. No surprise fees."
 		}
 	],
 
 	servicesSection: {
 		eyebrow: 'What We Offer',
-		heading: 'Roofing Services for Every Need',
+		heading: 'Landscaping Services for Every Need',
 		subheading:
-			'From a single storm-damaged shingle to a full commercial replacement, Summit handles it all — with the same transparency and craftsmanship on every job.'
+			'From routine lawn care to a full backyard transformation, Ridgeline handles it all — with the same care and craftsmanship on every job.'
 	},
 
 	services: [
 		{
-			title: 'Full Roof Replacement',
+			title: 'Landscape Design & Installation',
 			description:
-				'Complete tear-off and installation of asphalt, metal, or tile roofing systems. Includes decking inspection, ice & water shield, and ridge ventilation.',
-			price: 'From $8,500'
+				'Custom planting plans, garden beds, trees, shrubs, and seasonal color. Designed for your climate, soil, and lifestyle — installed with a 2-year warranty.',
+			price: 'From $2,500',
+			imageSrc: '/images/services/landscape-design.avif'
 		},
 		{
-			title: 'Roof Repair',
+			title: 'Hardscaping',
 			description:
-				'Targeted fixes for leaks, missing shingles, flashing failures, and storm damage. Most repairs completed same week, often same day.',
-			price: 'From $350'
+				'Patios, walkways, retaining walls, and fire pit surrounds built with natural stone, pavers, or brick. Structures that last decades and add real property value.',
+			price: 'From $4,000',
+			imageSrc: '/images/services/hardscaping.avif'
 		},
 		{
-			title: 'Storm Damage Inspection',
+			title: 'Lawn Care & Maintenance',
 			description:
-				'Free post-storm assessment with a written damage report suitable for insurance submission. We work directly with all major carriers.',
-			price: 'Free'
+				'Weekly or bi-weekly mowing, edging, and blowing plus seasonal fertilization, aeration, and overseeding. Consistent crews all season long.',
+			price: 'From $65/visit',
+			imageSrc: '/images/services/lawn-care.avif'
 		},
 		{
-			title: 'Gutter Installation & Replacement',
+			title: 'Irrigation & Sprinkler Systems',
 			description:
-				'Seamless aluminum gutters in 20+ colors, with optional leaf-guard systems. Properly pitched and fastened to protect your foundation.',
-			price: 'From $1,200'
+				'Smart drip and spray irrigation designed around your specific plantings. Installation, seasonal startup, winterization, and repairs for any brand.',
+			price: 'From $1,800',
+			imageSrc: '/images/services/irrigation.avif'
+		},
+		{
+			title: 'Seasonal Cleanup & Mulching',
+			description:
+				'Spring and fall cleanups including leaf removal, bed edging, fresh mulch, and debris haul-away. We leave your yard looking sharp every season.',
+			price: 'From $250',
+			imageSrc: '/images/services/seasonal-cleanup.avif'
+		},
+		{
+			title: 'Tree & Shrub Care',
+			description:
+				'Professional pruning, shaping, and health assessments for established trees and shrubs. Proper cuts at the right time of year for long-term structure.',
+			price: 'From $150',
+			imageSrc: '/images/services/tree-care.avif'
 		}
 	],
 
 	processSection: {
 		eyebrow: 'How It Works',
-		heading: 'From First Call to Final Warranty',
+		heading: 'From First Call to Finished Yard',
 		subheading:
-			'Four steps is all it takes. No chasing us down for updates, no surprise charges, no unfinished job sites.'
+			'Four straightforward steps. No chasing us down for updates, no surprise charges, no unfinished projects.'
 	},
 
 	process: [
 		{
 			number: '01',
-			title: 'Schedule a Free Inspection',
+			title: 'Schedule a Free Consultation',
 			description:
-				'Book online or call us. A Summit estimator visits your property within 48 hours, assesses the roof from ridge to drip edge, and photographs any damage.'
+				'Book online or call us. A Ridgeline designer visits your property within 48 hours, walks the space with you, and listens to how you want to use your yard.'
 		},
 		{
 			number: '02',
-			title: 'Review Your Itemized Quote',
+			title: 'Review Your Design & Quote',
 			description:
-				'You receive a detailed written estimate within 24 hours of inspection — materials, labor, permit fees, and timeline all broken out. No pressure to sign that day.'
+				'You receive a detailed written estimate within 24 hours — plant selections, materials, labor, and a project timeline all broken out. No pressure to sign that day.'
 		},
 		{
 			number: '03',
-			title: 'We Handle Permits & Scheduling',
+			title: 'We Handle Sourcing & Scheduling',
 			description:
-				"Once you approve the quote, we pull the permit, order materials, and lock in a start date. You'll get a confirmation text the evening before work begins."
+				"Once you approve, we source materials, schedule the crew, and lock in your start date. You'll get a confirmation text the evening before work begins."
 		},
 		{
 			number: '04',
-			title: 'Expert Installation & Final Walkthrough',
+			title: 'Installation & Final Walkthrough',
 			description:
-				'Our crew completes the job to code, cleans the site with magnetic nail sweeps, and walks you through the finished work before we leave. Warranty docs in hand.'
+				"Our crew completes the project, cleans the site completely, and walks you through the finished work — including care instructions for new plantings. Warranty docs in hand."
 		}
 	],
 
@@ -313,34 +333,34 @@ export const siteContent: SiteContent = {
 		eyebrow: 'Customer Reviews',
 		heading: 'What Denver Homeowners Are Saying',
 		subheading:
-			"Over 400 five-star reviews and counting. Here's what a few of our customers had to say about working with Summit."
+			"Over 500 five-star reviews and counting. Here's what a few of our customers had to say about working with Ridgeline."
 	},
 
 	testimonials: [
 		{
 			quote:
-				"Summit replaced our roof after the September hail storm. From inspection to final walkthrough it was 11 days. Every other contractor I called either didn't show up or gave me a verbal quote. These guys had paperwork for everything.",
+				"Ridgeline completely transformed our backyard — new patio, garden beds, and a drip system. From first meeting to final walkthrough it was three weeks. Every other landscaper I called never followed up. These guys had a design ready in 24 hours.",
 			name: 'Diane Kowalski',
 			title: 'Homeowner',
 			company: 'Littleton, CO'
 		},
 		{
 			quote:
-				"I manage four commercial properties in the metro and Summit is the only roofing crew I trust. They're the rare contractor that actually communicates — I always know what's happening and what it costs.",
+				"I manage several rental properties and Ridgeline handles all of them. They're the rare contractor that actually communicates — I always know what's being done and what it costs. Curb appeal has noticeably improved across the board.",
 			name: 'Marcus Webb',
 			title: 'Property Manager',
 			company: 'Webb Property Group'
 		},
 		{
 			quote:
-				'After two failed repairs from another company, Summit found the real source of our leak in 20 minutes. Fixed the same afternoon. The 10-year warranty gave us real peace of mind.',
+				'After two other companies planted shrubs that died within a season, Ridgeline came in, assessed our soil and drainage, and replanted everything correctly. Two years later it all looks incredible.',
 			name: 'Priya Anand',
 			title: 'Homeowner',
 			company: 'Aurora, CO'
 		},
 		{
 			quote:
-				"Honest pricing, clean job site, and they even re-seeded the small patch of lawn their ladder damaged without us asking. That's the kind of company you recommend to everyone you know.",
+				"Honest pricing, immaculate cleanup, and they noticed our sprinkler head was damaged and fixed it without charging extra. That's the kind of company you recommend to everyone on the block.",
 			name: 'Tom Richter',
 			title: 'Homeowner',
 			company: 'Castle Rock, CO'
@@ -351,49 +371,49 @@ export const siteContent: SiteContent = {
 		eyebrow: 'Got Questions?',
 		heading: 'Frequently Asked Questions',
 		subheading:
-			"Everything you need to know before hiring a roofing contractor. Don't see your answer? Give us a call."
+			"Everything you need to know before hiring a landscaping company. Don't see your answer? Give us a call."
 	},
 
 	faqs: [
 		{
-			question: 'How long does a full roof replacement take?',
+			question: 'How long does a landscape installation project take?',
 			answer:
-				"Most residential replacements are completed in one to two days depending on size and complexity. We'll give you a specific timeline in your written quote. We don't leave a job unfinished overnight unless weather forces it, and we always secure the site before leaving."
+				"It depends on scope. A garden bed refresh can be done in a day. A full backyard design with hardscaping and irrigation typically runs one to three weeks. We'll give you a specific timeline in your written quote and keep you updated at every stage."
 		},
 		{
-			question: "Will my homeowner's insurance cover the replacement?",
+			question: 'What happens if my plants die after installation?',
 			answer:
-				"If the damage was caused by a covered event like hail or wind, there's a strong chance your policy covers most of the cost minus your deductible. We provide a detailed damage report and can join the call with your adjuster if that helps. We never inflate claims — that's insurance fraud and it's not how we operate."
+				"All plantings are covered under our 2-year installation warranty. If a plant fails due to our selection or installation — not neglect or drought — we replace it at no charge. We'll also walk you through proper watering and care at the final walkthrough."
 		},
 		{
-			question: 'Do you offer financing?',
+			question: 'Do you offer maintenance plans after a design project?',
 			answer:
-				'Yes. We partner with GreenSky to offer 12-month same-as-cash and longer-term financing options. Apply during your estimate appointment — most approvals take under five minutes.'
+				'Yes. Most of our design clients move onto a weekly or bi-weekly maintenance plan after installation. It keeps everything looking its best and gives you one reliable crew that already knows your yard.'
 		},
 		{
-			question: 'What roofing materials do you carry?',
+			question: 'Can you work with my existing irrigation system?',
 			answer:
-				"We install GAF and Owens Corning architectural shingles, standing-seam and corrugated metal, and concrete or clay tile. We'll recommend the best fit for your roof pitch, climate exposure, and budget during the inspection."
+				"Absolutely. We service and repair all major brands, and we can integrate new zones into an existing system. During the consultation we'll assess what you have and recommend what makes sense — upgrade only where it's needed."
 		}
 	],
 
 	cta: {
-		heading: "Ready for a Roof You Can Count On?",
+		heading: 'Ready for a Yard You Actually Love?',
 		subtext:
-			"Join 400+ Denver homeowners who chose Summit for quality, transparency, and craftsmanship that lasts.",
-		primaryCTA: 'Get Your Free Estimate',
+			'Join 500+ Denver homeowners who chose Ridgeline for design, craftsmanship, and outdoor spaces built to last.',
+		primaryCTA: 'Get Your Free Consultation',
 		secondaryCTA: 'Call (720) 555-0184'
 	},
 
 	contactSection: {
 		eyebrow: 'Get in Touch',
-		heading: 'Request Your Free Estimate',
+		heading: 'Request Your Free Consultation',
 		subheading:
-			'Fill out the form and a Summit estimator will reach out within one business day to schedule your inspection.'
+			'Fill out the form and a Ridgeline designer will reach out within one business day to schedule your on-site visit.'
 	},
 
 	contact: {
-		email: 'hello@summitroofingco.com',
+		email: 'hello@ridgelineoutdoor.com',
 		phone: '(720) 555-0184',
 		address: '4820 Sheridan Blvd, Denver, CO 80212'
 	}

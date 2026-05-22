@@ -22,14 +22,14 @@
 	}
 </script>
 
-<header class="sticky top-0 z-50 border-b border-border bg-surface/90 backdrop-blur-sm">
+<header class="sticky top-0 z-50 border-b border-border bg-brand/90 backdrop-blur-sm">
 	<!-- Main bar -->
 	<Container>
 		<div class="flex h-16 items-center justify-between">
 			<!-- Logo -->
 			<a
 				href="/"
-				class="font-display text-xl font-bold text-text-primary"
+				class="font-display text-xl font-bold text-text-tertiary transition-colors duration-200 hover:text-text-primary"
 				onclick={closeMenu}
 			>
 				{siteContent.companyName}
@@ -40,7 +40,7 @@
 				{#each siteContent.nav as link (link.href)}
 					<a
 						href={link.href}
-						class="text-sm font-medium text-text-secondary transition-colors duration-200 hover:text-text-primary"
+						class="text-sm font-medium text-text-tertiary transition-colors duration-200 hover:text-text-primary"
 					>
 						{link.label}
 					</a>
@@ -54,7 +54,7 @@
 				</div>
 
 				<button
-					class="rounded-md p-2 text-text-secondary transition-colors duration-200 hover:bg-neutral-100 hover:text-text-primary md:hidden"
+					class="rounded-md p-2 text-text-tertiary transition-colors duration-200 hover:bg-neutral-100 hover:text-text-primary md:hidden"
 					onclick={toggleMenu}
 					aria-label={menuOpen ? 'Close menu' : 'Open menu'}
 					aria-expanded={menuOpen}
@@ -108,7 +108,7 @@
 					{#each siteContent.nav as link (link.href)}
 						<a
 							href={link.href}
-							class="rounded-md px-3 py-2.5 text-sm font-medium text-text-secondary transition-colors duration-200 hover:bg-neutral-50 hover:text-text-primary"
+							class="rounded-md px-3 py-2.5 text-sm font-medium text-text-tertiary transition-colors duration-200 hover:bg-neutral-50 hover:text-text-primary"
 							onclick={closeMenu}
 						>
 							{link.label}

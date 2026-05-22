@@ -1,35 +1,48 @@
 <script lang="ts">
-	/**
-	 * Services section — responsive card grid driven by siteContent.services.
-	 * Add or remove objects in that array to change the number of cards.
-	 * The price badge is hidden automatically when ServiceCard.price is omitted.
-	 */
 	import { siteContent } from '$lib/content/site';
-	import Button from '$lib/components/ui/Button.svelte';
 	import Container from '$lib/components/ui/Container.svelte';
 	import SectionHeading from '$lib/components/ui/SectionHeading.svelte';
 
 	const { eyebrow, heading, subheading } = siteContent.servicesSection;
 </script>
 
-<section id="services" class="bg-surface-alt py-section">
+<section id="services" class="bg-surface py-section">
 	<Container>
 		<SectionHeading {eyebrow} {heading} {subheading} class="mb-12" />
 
-		<div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+		<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
 			{#each siteContent.services as service (service.title)}
-				<div
-					class="flex flex-col rounded-xl border border-border bg-surface p-8 shadow-card transition-shadow duration-200 hover:shadow-elevated"
-				>
-					<h3 class="mb-3 font-display text-xl font-bold text-text-primary">{service.title}</h3>
-					<p class="mb-4 text-sm leading-normal text-text-secondary">{service.description}</p>
-					{#if service.price}
-						<p class="mb-4 text-lg font-bold text-brand">{service.price}</p>
+				<article class="group relative h-72 overflow-hidden rounded-xl">
+
+					<!-- Image or branded gradient fallback -->
+					{#if service.imageSrc}
+						<img
+							src={service.imageSrc}
+							alt={service.title}
+							class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+							loading="lazy"
+						/>
+					{:else}
+						<div class="absolute inset-0 bg-brand"></div>
 					{/if}
-					<div class="mt-auto pt-2">
-						<Button variant="ghost" size="sm" href="#contact">Learn More</Button>
+
+					<!-- Gradient overlay -->
+					<div class="absolute inset-0 bg-linear-to-t from-black/80 via-black/25 to-transparent"></div>
+
+					<!-- Price badge -->
+					{#if service.price}
+						<div class="absolute right-4 top-4 rounded-full bg-accent px-3 py-1 text-xs font-bold text-text-primary shadow-sm">
+							{service.price}
+						</div>
+					{/if}
+
+					<!-- Text -->
+					<div class="absolute bottom-0 left-0 right-0 p-5">
+						<h3 class="mb-1.5 font-display text-lg font-bold text-white">{service.title}</h3>
+						<p class="text-sm leading-normal text-white/75">{service.description}</p>
 					</div>
-				</div>
+
+				</article>
 			{/each}
 		</div>
 	</Container>
